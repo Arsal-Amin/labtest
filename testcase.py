@@ -18,7 +18,7 @@ class WebAppTests(unittest.TestCase):
         cls.driver = webdriver.Chrome(service=Service(chrome_driver_path), options=chrome_options)
 
         # Note: Ensure that the URL includes the protocol (http/https)
-        cls.base_url = "http://localhost/Web%20App"
+        cls.base_url = "https://localhost/Online-Railway-Reservation/ORRS-PHP/"
 
     @classmethod
     def tearDownClass(cls):
@@ -42,7 +42,7 @@ class WebAppTests(unittest.TestCase):
         submit_button.click()
 
         # Verify redirection to the dashboard
-        self.assertEqual(self.driver.current_url, "http://localhost/Web%20App/dashboard.php")
+        self.assertEqual(self.driver.current_url, "https://localhost/Online-Railway-Reservation/ORRS-PHP/dashboard.php")
 
     def test_login_failed(self):
         self.driver.get(self.base_url + "/login.php")        # Perform login with invalid credentials
